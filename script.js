@@ -149,6 +149,7 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    document.getElementById("progress").innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -193,6 +194,7 @@ function showScore(){
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
+    document.getElementById("progress").innerText = "Quiz Completed 🎉";
 }
 
 function handleNextButton(){
@@ -215,3 +217,4 @@ nextButton.addEventListener("click", ()=>{
 })
 
 startQuiz();
+
